@@ -1,5 +1,7 @@
 package jdebu.github.io.futbolperuano.data.datasource.rest;
 
+
+import java.io.IOException;
 import java.util.List;
 
 import jdebu.github.io.futbolperuano.data.BuildConfig;
@@ -31,11 +33,13 @@ public class RestTeamDataStore implements TeamDataStore{
         call.enqueue(new Callback<TeamResponse>() {
             @Override
             public void onResponse(Call<TeamResponse> call, Response<TeamResponse> response) {
+                //Log.e("llego",response.toString());
                 if (response.isSuccessful()){
                     TeamResponse teamResponse=response.body();
-                    if (teamResponse==null){
-                        List<TeamEntity> teamEntityList=teamResponse.getData();
-                        repositoryCallback.onSuccess(teamEntityList);
+                    if (teamResponse!=null){
+                        //List<TeamEntity> teamEntityList=teamResponse.getData();
+                        //Log.e("RESTTEAM",teamEntityList.toString());
+                        repositoryCallback.onSuccess(teamResponse);
                     }else{
                         repositoryCallback.onFailure(new Exception(ERROR_MESSAGE));
                     }

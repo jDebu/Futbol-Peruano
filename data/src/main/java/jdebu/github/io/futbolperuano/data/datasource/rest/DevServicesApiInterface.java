@@ -10,6 +10,6 @@ import retrofit2.http.GET;
 
 public interface DevServicesApiInterface {
 
-    @GET("/equipos")
+    @GET("/equipos/")
     Call<TeamResponse> teams();
 }

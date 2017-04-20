@@ -39,6 +39,8 @@ ext{
     interceptor= '3.3.1'
     //GLIDE
     glide='3.7.0'
+    //BUTTERKNIFE
+    butterknife= '7.0.1'
 }
 
 task clean(type: Delete) {
