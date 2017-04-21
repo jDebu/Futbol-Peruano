@@ -50,8 +50,9 @@ dependencies {
     compile "com.jakewharton:butterknife:$rootProject.butterknife"
 
     //compile project(":data")
-    devDebugCompile project(path: ':data', configuration:'devDebug')
-    prodDebugCompile project(path: ':data', configuration:'prodDebug')
+    devDebugCompile project(path: ':data', configuration: 'devDebug')
+    prodDebugCompile project(path: ':data', configuration: 'prodDebug')
     //prodReleaseCompile project(path: ':data', configuration:'prodRelease')
 
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

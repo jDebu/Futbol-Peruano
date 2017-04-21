@@ -1,10 +1,12 @@
 package jdebu.github.io.futbolperuano.domain.model;
 
+import java.io.Serializable;
+
 /**
  * Created by jose on 19/04/2017.
  */
 
-public class Team {
+public class Team implements Serializable{
     private String name;
     private String photo;
     private String link;

@@ -66,7 +66,7 @@ public class MainActivity extends BaseActivity implements MainView{
             public void onClick(View view, int position) {
                 if (teams!=null){
                     Team team=teams.get(position);
-
+                    teamPresenter.selectedTeam(team);
                 }
             }
 
@@ -102,7 +102,7 @@ public class MainActivity extends BaseActivity implements MainView{
 
     @Override
     public void gotoTeamMatchs(Bundle bundle) {
-
+        next(bundle,MatchActivity.class);
     }
     @Override
     protected void onDestroy() {

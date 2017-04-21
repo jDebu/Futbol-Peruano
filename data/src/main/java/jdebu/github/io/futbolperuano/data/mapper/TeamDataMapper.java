@@ -18,8 +18,8 @@ public class TeamDataMapper {
         team.setName(teamEntity.getName());
         team.setPhoto(teamEntity.getLogo());
         String url=teamEntity.getUrl();
-        //int num=(url.substring(37)).indexOf('/');
-        //team.setLink(url.substring(28,36).concat(url.substring(36,37+num)));
+        int num=(url.substring(37)).indexOf('/');
+        team.setLink(url.substring(36,37+num));
         return team;
     }
     public List<Team> transformResponse(TeamResponse teamResponse){

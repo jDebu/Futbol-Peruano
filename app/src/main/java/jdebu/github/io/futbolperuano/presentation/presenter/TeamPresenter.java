@@ -1,5 +1,6 @@
 package jdebu.github.io.futbolperuano.presentation.presenter;
 
+import android.os.Bundle;
 import android.util.Log;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import jdebu.github.io.futbolperuano.presentation.view.MainView;
  */
 
 public class TeamPresenter implements ITeamCallback,Presenter<MainView> {
-    private final TeamInteractor teamInteractor;//no hago uso
+    private final TeamInteractor teamInteractor;
     private MainView mainView;
 
     public TeamPresenter(TeamInteractor teamInteractor) {
@@ -47,5 +48,11 @@ public class TeamPresenter implements ITeamCallback,Presenter<MainView> {
     public void getTeams() {
         this.mainView.showLoading();
         teamInteractor.getTeams(this);
+    }
+
+    public void selectedTeam(Team team) {
+        Bundle bundle=new Bundle();
+        bundle.putSerializable("TEAM",team);
+        this.mainView.gotoTeamMatchs(bundle);
     }
 }
